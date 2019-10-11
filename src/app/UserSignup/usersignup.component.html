@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<title>User Signup</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<style type="text/css">
+	body {
+		color: #999;
+		background: url(./assets/img/hero-bg.jpg);
+		background-size: cover;
+		font-family: 'Roboto', sans-serif;
+		min-height: 100vh;
+	}
+	.form-control, .form-control:focus, .input-group-addon {
+		border-color: #e1e1e1;
+        border-radius: 0;
+	}
+	.signup-form {
+		width: 450px;
+		margin: 0 auto;
+		padding: 50px 0;
+	}
+	.signup-form h2 {
+		color: #636363;
+        margin: 0 0 15px;
+		text-align: center;
+    }
+    .signup-form .lead {
+        font-size: 14px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+    .signup-form form {		
+		border-radius: 1px;
+    	margin-bottom: 15px;
+        background: #fff;
+		border: 1px solid #f3f3f3;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+	.signup-form .form-group {
+		margin-bottom: 20px;
+	}
+	.signup-form label {
+		font-weight: normal;
+		font-size: 13px;
+	}
+	.signup-form .form-control {
+		min-height: 38px;
+		box-shadow: none !important;
+		border-width: 0 0 1px 0;
+	}	
+	.signup-form .input-group-addon {
+		max-width: 42px;
+		text-align: center;
+		background: none;
+		border-width: 0 0 1px 0;
+		padding-left: 5px;
+	}
+    .signup-form .btn {        
+        font-size: 16px;
+        font-weight: bold;
+		background: #19aa8d;
+        border-radius: 3px;
+		border: none;
+		min-width: 140px;
+        outline: none !important;
+    }
+	.signup-form .btn:hover, .signup-form .btn:focus {
+		background: #179b81;
+	}
+	.signup-form a {
+		color: #19aa8d;
+		text-decoration: none;
+	}	
+	.signup-form a:hover {
+		text-decoration: underline;
+	}
+	.signup-form .fa {
+		font-size: 21px;
+	}
+	.signup-form .fa-paper-plane {
+		font-size: 17px;
+	}
+	.signup-form .fa-check {
+		color: #fff;
+		left: 9px;
+		top: 18px;
+		font-size: 7px;
+		position: absolute;
+	}
+</style>
+
+</head>
+<body>
+
+<div class="signup-form" style="width: 500px">	
+    <form method="POST" style="padding-left: 40px; padding-right: 40px;">
+		<h2><img src="./assets/img/userlogo.png" style="border-radius: 50%; width: 60px; height: 60px"> User</h2>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+				<input type="text" [(ngModel)]="user.userName" class="form-control" name="userName" placeholder=" Enter username" required="required">
+			</div>
+		</div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+				<input type="email" [(ngModel)]="user.email" class="form-control" name="email" placeholder=" Enter Email" required="required">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user"></i></span>
+				<input type="text" [(ngModel)]="user.firstName" class="form-control" name="firstName" placeholder=" Enter firstName" required="required">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user-o"></i></span>
+				<input type="text" [(ngModel)]="user.lastName" class="form-control" name="lastName" placeholder=" Enter lastName" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+				<input type="password" [(ngModel)]="user.password" class="form-control" name="password" id="password" placeholder=" Enter password" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-phone"></i></span>
+				<input type="text" [(ngModel)]="user.contactNumber" class="form-control" name="contactNumber" maxlength="10" minlength="10" placeholder=" Enter contactNumber" required="required">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
+				<input type="text" [(ngModel)]="user.regCode" class="form-control" name="regCode" placeholder=" Enter regCode" required="required">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-male"></i></span>
+				<input type="text" [(ngModel)]="user.role" class="form-control" name="role" placeholder=" Enter Role" required="required">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-linkedin-square"></i></span>
+				<input type="url" [(ngModel)]="user.linkedinUrl" class="form-control" name="linkedinUrl" placeholder=" Enter linkedinUrl" required="required">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-calendar-plus-o"></i></span>
+				<input type="number" [(ngModel)]="user.yearsofExperience" class="form-control" name="yearsofExperience" placeholder=" Years of Experience" required="required">
+			</div>
+        </div>            
+		<div class="form-group">
+            <button type="button" class="btn btn-primary btn-block btn-lg" (click)="createUser()">Register</button>
+		</div>
+
+		<p class="small text-center">By clicking the Sign Up button, you agree to our <br><a>Terms &amp; Conditions</a> and <a>Privacy Policy</a>.</p>
+		<div class="text-center">Already have an account? <a href routerLink="/usersignin">Login here</a>.</div>
+
+	</form>
+</div>
+</body>
+</html>                            

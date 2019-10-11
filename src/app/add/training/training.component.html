@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>User Menu</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="./assets/lib/jquery/jquery.min.js"></script>
+  <script src="./assets/lib/wow/wow.min.js"></script>
+  <script src="./assets/lib/superfish/superfish.min.js"></script>
+
+  <script src="./assets/js/main.js"></script>
+
+  <style type="text/css">
+    body {
+  background: #fff;
+  color: #666666;
+  font-family: "Open Sans", sans-serif;
+  }
+
+  a {
+  color: #2dc997;
+  }
+
+  a:hover, a:active, a:focus {
+  color: #2dca98;
+  outline: none;
+  text-decoration: none;
+  }
+
+  p {
+  padding: 0;
+  margin: 0 0 30px 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  padding: 0;
+  }
+  #header {
+  padding: 30px 0;
+  height: 92px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+  z-index: 997;
+  }
+
+  #header #logo {
+  float: left;
+  }
+
+  #header #logo h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 6px 0;
+  line-height: 1;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  }
+
+  #header #logo h1 a, #header #logo h1 a:hover {
+  color: #fff;
+  }
+
+  #header #logo img {
+  padding: 0;
+  margin: 0;
+  }
+
+  @media (max-width: 768px) {
+  #header #logo h1 {
+    font-size: 26px;
+  }
+  #header #logo img {
+    max-height: 40px;
+  }
+  }
+
+  #header.header-fixed {
+  background: rgba(52, 59, 64, 0.9);
+  padding: 20px 0;
+  height: 72px;
+  transition: all 0.5s;
+  }
+  #hero {
+  width: 100%;
+  height: 120vh;
+  background: url(./assets/img/hero-bg.jpg) top center;
+  background-size: cover;
+  position: relative;
+  }
+
+  /* @media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+  } */
+
+  #hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  }
+
+  #hero .hero-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  }
+
+  #hero h1 {
+  margin: 30px 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: #fff;
+  }
+
+  @media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  }
+
+  #hero h2 {
+  color:#2dca98;
+  margin-bottom: 50px;
+  font-size: 24px;
+  }
+
+  @media (max-width: 768px) {
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  }
+
+  #hero .btn-get-started {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+  }
+
+  #hero .btn-get-started:hover {
+  background: #2dc997;
+  border: 2px solid #2dc997;
+  }
+  .nav-menu, .nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  }
+
+  .nav-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+  }
+
+  .nav-menu li {
+  position: relative;
+  white-space: nowrap;
+  }
+
+  .nav-menu > li {
+  float: left;
+  }
+
+  .nav-menu li:hover > ul,
+  .nav-menu li.sfHover > ul {
+  display: block;
+  }
+
+  .nav-menu ul ul {
+  top: 0;
+  left: 100%;
+  }
+
+  .nav-menu ul li {
+  min-width: 180px;
+  }
+  #nav-menu-container {
+  float: right;
+  margin: 0;
+  }
+
+  @media (max-width: 768px) {
+  #nav-menu-container {
+    display: none;
+  }
+  }
+
+  .nav-menu a {
+  padding: 0 8px 10px 8px;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 13px;
+  outline: none;
+  }
+
+  .nav-menu > li {
+  margin-left: 10px;
+  }
+
+  .nav-menu > li > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #2dc997;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  }
+
+  .nav-menu a:hover:before, .nav-menu li:hover > a:before, .nav-menu .menu-active > a:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  }
+
+  .nav-menu ul {
+  margin: 4px 0 0 0;
+  border: 1px solid #e7e7e7;
+  }
+
+  .nav-menu ul li {
+  background: #fff;
+  }
+
+  .nav-menu ul li:first-child {
+  border-top: 0;
+  }
+
+  .nav-menu ul li a {
+  padding: 10px;
+  color: #333;
+  transition: 0.3s;
+  display: block;
+  font-size: 13px;
+  text-transform: none;
+  }
+
+  .nav-menu ul li a:hover {
+  background: #2dc997;
+  color: #fff;
+  }
+
+  .nav-menu ul ul {
+  margin: 0;
+  }
+  #mobile-nav-toggle {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  margin: 20px 20px 0 0;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  display: none;
+  transition: all 0.4s;
+  outline: none;
+  cursor: pointer;
+  }
+
+  #mobile-nav-toggle i {
+  color: #fff;
+  }
+
+  @media (max-width: 768px) {
+  #mobile-nav-toggle {
+    display: inline;
+  }
+  }
+
+
+  #footer {
+  background: #343b40;
+  padding: 30px 0;
+  color: #fff;
+  font-size: 14px;
+  }
+
+  #footer .copyright {
+  text-align: center;
+  }
+
+  input{
+    border:black 1px solid;
+  }
+  th{
+    text-align:center;
+  }
+  td{
+    color:#2dc997;
+  }
+  </style>
+  </head>
+
+  <body>
+  <header id="header">
+    <div class="container">
+
+    <div id="logo" class="pull-left">
+      <h3><a href routerLink="/">Mentor on Demand</a></h3>
+    </div>
+
+    <nav id="nav-menu-container">
+      <ul class="nav-menu">
+        <li class="menu-has-children"><a>User</a>
+          <ul>
+          <li><a href routerLink="/adduser">Add</a></li>
+          <li><a  href routerLink="/blockuser">Block</a></li>
+          </ul>
+        </li>
+        <li class="menu-has-children"><a>Mentor</a>
+          <ul>
+          <li><a  href routerLink="/addmentor">Add</a></li>
+          <li><a  href routerLink="/blockmentor"> Block</a></li>
+          </ul>
+        </li>
+        <li class="menu-has-children"><a>Technology</a>
+          <ul>
+          <li><a  href routerLink="/addtechnology">Add</a></li>
+          <li><a  href routerLink="/removetechnology">Remove</a></li>
+          </ul>
+        </li>
+        <li class="menu-has-children"><a>Skill</a>
+          <ul>
+          <li><a  href routerLink="/addskill">Add</a></li>
+          <li><a  href routerLink="/removeskill">Remove</a></li>
+          </ul>
+        </li>
+        <li class="menu-has-children"><a>Training</a>
+          <ul>
+          <li><a  href routerLink="/addtraining">Add</a></li>
+          <li><a  href routerLink="/removetraining">Remove</a></li>
+          </ul>
+        </li>
+      <li><a >Commission Rates</a></li>
+      <li><a href routerLink="/">Logout</a></li>
+      </ul>
+    </nav>
+    </div>
+  </header>
+  <section id="hero">
+    <div class="hero-container">
+        <div>
+            <h2 class="text-center">Training Details</h2>
+            <table class="table table-condensed" style="border: solid black 2px;margin-left: 12px;">
+                <thead>
+                <tr>
+                  <th>Id</th>                
+                  <th>Progress</th>
+                  <th>commissionAmount</th>
+                  <th>Rating</th>            
+                  <th>StartDate</th>
+                  <th>endDate</th>
+                  <th>AmountReceived</th>
+                  <th>MentorId</th>
+                 <th>AmountToMentor</th>
+                  <th>UserId</th>
+                
+               <th>SkillId</th>
+              
+               <th>Fees</th>
+               <th>Status</th>
+               <th>Created At</th>
+                <th>Updated At</th>
+               <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let training of training">
+                  <td >{{training.id}}</td>
+                  <td>{{training.progress}}</td>
+                  <td>{{training.commissionAmount}}</td>
+                  <td>{{training.rating}}</td>
+                  <td>{{training.startDate}}</td>
+                  <td>{{training.endDate}}</td>
+                  <td>{{training.amountRecieved}}</td>
+                  <td>{{training.mentorId}}</td>
+                  <td>{{training.amountToMentor}}</td>
+                  <td>{{training.userId}}</td>
+                  <td>{{training.skillId}}</td>
+                  <td>{{training.fees}}</td>
+                  <td>{{training.status}}</td>
+                  <td>{{training.createdAt | date}}</td>
+                  <td>{{training.updatedAt | date}}</td>
+                  <td><button class="btn btn-danger" (click)="deleteTraining(training)"> Delete Training</button></td>
+                </tr>
+                </tbody>
+              </table>
+        </div>
+        
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="footer-top">
+    <div class="container">
+
+    </div>
+    </div>
+
+    <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong>Mentor on Demand</strong>. All Rights Reserved
+    </div>
+    </div>
+  </footer>
+
+  </body>
+</html>

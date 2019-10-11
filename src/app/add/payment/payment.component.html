@@ -1,0 +1,32 @@
+<div class="col-md-6">
+    <h2> Payment Details</h2>
+    
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+         
+        <th>txnType</th>
+        <th>amount</th>
+        <th>remarks</th>
+
+        <th>mentorId</th>
+        <th>trainingId</th>
+        <th>paymentType</th>
+     <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let payment of payment">
+        <td class="hidden">{{payment.id}}</td>
+        <td>{{payment.txnType}}</td>
+        <td>{{payment.amount}}</td>
+        <td>{{payment.remarks}}</td>
+        <td>{{payment.mentorId}}</td>
+        <td>{{payment.trainingId}}</td>
+        <td>{{payment.paymentType}}</td>
+        <td><button class="btn btn-danger" (click)="deletePayment(payment)"> Delete Payment</button></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
